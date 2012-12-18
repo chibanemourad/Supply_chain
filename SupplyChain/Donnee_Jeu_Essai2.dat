@@ -1,0 +1,37 @@
+/*********************************************
+ * OPL 12.5 Data
+ * Author: CHIMOU
+ * Creation Date: 27 oct. 2012 at 15:50:23
+ *********************************************/
+N_Usine=4;
+N_SsTraitant=3;
+N_Entrepot=4;
+N_Fournisseur=3;
+Qu_Prod=2000;
+Cout_Fix_Usine=[1000,1000,1000,1000];
+Cout_Fix_SsTrait=[500,500,500];
+Cout_Fix_Entrepot=[200,200,200,200];
+/*Differents arc entre les noeuds*/
+//<Usine,Sous-Traitant>
+U_S={<1,1>,<2,1>,
+	 <1,2>,<2,2>,<3,2>,<4,2>,
+	 <1,3>,<2,3>,<3,3>,<4,3>
+	 };
+//<Usine,Fournisseur>	 
+U_F={<1,1>,<2,1>,<3,1>,<4,1>,
+	 <1,2>,<2,2>,
+	 <1,3>,		 <3,3>,<4,3>
+	 };
+//<Usine,Entrepot>	 
+U_E={
+	 <1,1>,<1,2>,<1,3>,<1,4>,
+	 <2,1>,<2,2>,<2,3>,<2,4>,
+	 <3,1>,<3,2>,<3,3>,<3,4>,
+	 <4,1>,<4,2>,<4,3>,<4,4>
+     };
+
+/*Valeurs des differents Couts*/
+CoutUS=[8,8,20,15,10,10,9,13,4,20];//Sous-traitants
+CoutUF=[9,14,13,10,10,10,3,12,12];//Fournisseurs
+CoutUE=[12,22,15,16,10,12,23,17,22,4,6,19,24,45,5,29];//Entrepots
+CoutUsine=[4,6,6,5];//Cout production par usine

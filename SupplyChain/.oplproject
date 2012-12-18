@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ASCII"?><project>
+	<version>1.0</version>
+	<configs>
+		<config default="true" name="Config_Enonce" category="opl">
+			<ref type="model" name="OCMTPSupplyChain.mod">
+			</ref>
+			<ref type="data" name="OCMTPSupplyChain.dat">
+			</ref>
+		</config>
+		<config default="false" name="Jeu_dessai1" category="opl">
+			<ref type="model" name="Model_Jeu_Essai1.mod">
+			</ref>
+			<ref type="data" name="Donnee_Jeu_Essai1.dat">
+			</ref>
+		</config>
+		<config default="false" name="Jeu_dessai2" category="opl">
+			<ref type="model" name="Model_Jeu_Essai2.mod">
+			</ref>
+			<ref type="data" name="Donnee_Jeu_Essai2.dat">
+			</ref>
+		</config>
+	</configs>
+	
+</project>

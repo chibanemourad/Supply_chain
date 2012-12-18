@@ -1,0 +1,60 @@
+//Traces d'execution de l'exemple "Jeu_dessai2" Voir le fichier "Jeu dessai.xls"
+
+
+// solution (optimal) with objective 75000
+
+**********************************************************************************************
+*                            Récapitulatif  des Usine choisies                               *
+**********************************************************************************************
+L'entreprise choisi de produire : [800] Unité de Produit fini, dans l'Entreprise N° : [1]
+L'entreprise choisi de produire : [800] Unité de Produit fini, dans l'Entreprise N° : [3]
+L'entreprise choisi de produire : [400] Unité de Produit fini, dans l'Entreprise N° : [4]
+
+**********************************************************************************************
+*                              01- Choix des Sous Traitants                                  *
+**********************************************************************************************
+Usine N° : [1] Achete : [1600] Pièces, chez le Sous-Traitant N° : [1]
+Usine N° : [4] Achete : [800] Pièces, chez le Sous-Traitant N° : [2]
+Usine N° : [3] Achete : [1600] Pièces, chez le Sous-Traitant N° : [3]
+
+**********************************************************************************************
+*                                 02- Choix des Fournisseurs                                 *
+**********************************************************************************************
+Usine N° : [4] Achete : [400] Unité de matière première, chez le Sous-Traitant N° : [1]
+Usine N° : [1] Achete : [800] Unité de matière première, chez le Sous-Traitant N° : [3]
+Usine N° : [3] Achete : [800] Unité de matière première, chez le Sous-Traitant N° : [3]
+
+**********************************************************************************************
+*                                    03- Choix des Entrepots                                 *
+**********************************************************************************************
+Usine N° : [1] Stocke : [500] Unité de Produit fini, dans l'Entrepot N° : [1]
+Usine N° : [1] Stocke : [300] Unité de Produit fini, dans l'Entrepot N° : [3]
+Usine N° : [3] Stocke : [500] Unité de Produit fini, dans l'Entrepot N° : [2]
+Usine N° : [3] Stocke : [300] Unité de Produit fini, dans l'Entrepot N° : [3]
+Usine N° : [4] Stocke : [400] Unité de Produit fini, dans l'Entrepot N° : [3]
+
+
+*********************************************************************************************
+Coût minimal pour la production de [2000] Unité de produit fini = : 75000 €
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+// solution (optimal) with objective 75000
+// Quality Incumbent solution:
+// MILP objective                                7.5000000000e+004
+// MILP solution norm |x| (Total, Max)           1.01200e+004 1.60000e+003
+// MILP solution error (Ax=b) (Total, Max)       0.00000e+000 0.00000e+000
+// MILP x bound error (Total, Max)               0.00000e+000 0.00000e+000
+// MILP x integrality error (Total, Max)         0.00000e+000 0.00000e+000
+// MILP slack bound error (Total, Max)           0.00000e+000 0.00000e+000
+// MILP indicator slack bound error (Total, Max) 0.00000e+000 0.00000e+000
+// 
+
+Produire_Qu = [800
+         0 800 400];
+Usine_Choisi = [1 0 1 1];
+Achete_Qu_F = [0 0 0 400 0 0 800 800 0];
+Stocker_Qu = [500 0 300 0 0 0 0 0 0 500 300 0 0 0 400 0];
+Entrepot_Choisi = [1 0 1 0 0 0 0 0 0 1 1 0 0 0 1 0];
+Achete_Qu_SsT = [1600 0 0 0 0 800 0 0 1600 0];
+SsTrait_Choisi = [1 0 0 0 0 1 0 0 1 0];

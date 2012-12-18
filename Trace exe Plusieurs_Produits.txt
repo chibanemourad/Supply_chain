@@ -1,0 +1,84 @@
+//Traces d'execution de l'exemple "Plusieurs Produits" Voir le fichier ".dat" associé
+
+
+// solution (optimal) with objective 116304
+**********************************************************************************************
+*                            Récapitulatif  des Usine choisies                               *
+**********************************************************************************************
+Produit de type :1
+L'entreprise choisi de produire : [467] Unité de Produit fini de type [1], dans l'Entreprise N° : [2]
+L'entreprise choisi de produire : [533] Unité de Produit fini de type [1], dans l'Entreprise N° : [3]
+Produit de type :2
+L'entreprise choisi de produire : [667] Unité de Produit fini de type [2], dans l'Entreprise N° : [1]
+L'entreprise choisi de produire : [333] Unité de Produit fini de type [2], dans l'Entreprise N° : [2]
+
+**********************************************************************************************
+*                                 CHOIX DES SOUS TRAITANTS                                    *
+**********************************************************************************************
+produit de type :1
+Usine N° : [2] Achete : [934] Pièces, pour le produit [1], chez le Sous-Traitant N° : [2]
+Usine N° : [3] Achete : [1066] Pièces, pour le produit [1], chez le Sous-Traitant N° : [2]
+produit de type :2
+Usine N° : [1] Achete : [2001] Pièces, pour le produit [2], chez le Sous-Traitant N° : [1]
+Usine N° : [2] Achete : [999] Pièces, pour le produit [2], chez le Sous-Traitant N° : [2]
+**********************************************************************************************
+*                                 CHOIX DES FOURNISSEURS                                     *
+**********************************************************************************************
+Produit de type :1
+Usine N° : [1] Achete : [0] Unité de matière première, pour le produit [1], chez le Fournisseur N° : [1]
+Usine N° : [2] Achete : [0] Unité de matière première, pour le produit [1], chez le Fournisseur N° : [2]
+Usine N° : [3] Achete : [533] Unité de matière première, pour le produit [1], chez le Fournisseur N° : [2]
+Usine N° : [2] Achete : [467] Unité de matière première, pour le produit [1], chez le Fournisseur N° : [3]
+Usine N° : [3] Achete : [0] Unité de matière première, pour le produit [1], chez le Fournisseur N° : [3]
+Produit de type :2
+Usine N° : [1] Achete : [1334] Unité de matière première, pour le produit [2], chez le Fournisseur N° : [1]
+Usine N° : [2] Achete : [0] Unité de matière première, pour le produit [2], chez le Fournisseur N° : [2]
+Usine N° : [3] Achete : [0] Unité de matière première, pour le produit [2], chez le Fournisseur N° : [2]
+Usine N° : [2] Achete : [666] Unité de matière première, pour le produit [2], chez le Fournisseur N° : [3]
+Usine N° : [3] Achete : [0] Unité de matière première, pour le produit [2], chez le Fournisseur N° : [3]
+**********************************************************************************************
+*                                 CHOIX DES ENTREPOTS                                        *
+**********************************************************************************************
+Produit de type :1
+Usine N° : [2] Stocke : [467] Unité de Produit fini de type [1], dans l'Entrepot N° : [2]
+Usine N° : [3] Stocke : [500] Unité de Produit fini de type [1], dans l'Entrepot N° : [3]
+Usine N° : [3] Stocke : [33] Unité de Produit fini de type [1], dans l'Entrepot N° : [4]
+Produit de type :2
+Usine N° : [1] Stocke : [500] Unité de Produit fini de type [2], dans l'Entrepot N° : [1]
+Usine N° : [1] Stocke : [167] Unité de Produit fini de type [2], dans l'Entrepot N° : [2]
+Usine N° : [2] Stocke : [333] Unité de Produit fini de type [2], dans l'Entrepot N° : [3]
+
+
+*********************************************************************************************
+Coût minimal pour la production de [ [1000 1000]] Unité de produit fini = : 116304 €
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+// solution (optimal) with objective 116304
+// Quality Incumbent solution:
+// MILP objective                                1.1630400000e+005
+// MILP solution norm |x| (Total, Max)           1.21600e+004 2.00100e+003
+// MILP solution error (Ax=b) (Total, Max)       0.00000e+000 0.00000e+000
+// MILP x bound error (Total, Max)               0.00000e+000 0.00000e+000
+// MILP x integrality error (Total, Max)         5.46834e-011 4.20641e-012
+// MILP slack bound error (Total, Max)           0.00000e+000 0.00000e+000
+// MILP indicator slack bound error (Total, Max) 2.10321e-011 4.20641e-012
+// 
+
+Produire_Qu = [[0
+             467 533]
+             [667 333 0]];
+Usine_Choisi = [[0 1 1]
+             [1 1 0]];
+Achete_Qu_F = [[0 0 533 467 0]
+             [1334 0 0 666 0]];
+Stocker_Qu = [[0 0 0 0 0 467 0 0 0 0 500 33]
+             [500 167 0 0 0 0 333 0 0 0 0 0]];
+Entrepot_Choisi = [[0 0 0 0 0 1 0 0 0 0 1 1]
+             [1 1 0 0 0 0 1 0 0 0 0 0]];
+Achete_Qu_SsT = [[0 0 0 934 1066]
+             [2001 0 0 999 0]];
+SsTrait_Choisi = [[0 0 0 1 1]
+             [1 0 0 1 0]];

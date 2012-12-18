@@ -1,0 +1,40 @@
+/*********************************************
+ * OPL 12.5 Data
+ * Author: CHIMOU
+ * Creation Date: 12 déc. 2012 at 02:06:29
+ *********************************************/
+N_Usine=3;
+N_SsTraitant=2;
+N_Entrepot=4;
+N_Fournisseur=3;
+N_Produits=2;
+Qu_Prod=[1000,1000];
+Qu_P_Fourni=[1,2];
+Qu_P_SsTrai=[2,3];
+
+Cout_Fix_Usine=[[1000,1000,1000],[1000,1000,1000]];
+Cout_Fix_SsTrait=[[500,500],[500,500]];
+Cout_Fix_Entrepot=[[200,200,200,200],[200,200,200,200]];
+/*Differents arc entre les noeuds*/
+//<Usine,Sous-Traitant>
+U_S={<1,1>,<2,1>,<3,1>,
+	 <2,2>,		 <3,2>
+	 };
+//<Usine,Fournisseur>	 
+U_F={<1,1>,
+	 <2,2>,		<3,2>,
+	 <2,3>,		<3,3>
+	 };
+//<Usine,Entrepot>	 
+U_E={
+	 <1,1>,<1,2>,<1,3>,<1,4>,
+	 <2,1>,<2,2>,<2,3>,<2,4>,
+	 <3,1>,<3,2>,<3,3>,<3,4>
+     };
+
+/*Valeurs des differents Couts*/
+CoutUS=[[10,15,20,8,8],[10,15,20,8,8]];//Sous-traitants
+CoutUF=[[12,10,10,9,13],[12,10,10,9,13]];//Fournisseurs
+CoutUE=[[12,15,20,25,12,10,10,12,15,12,12,12],[12,15,20,25,12,10,10,12,15,12,12,12]];//Entrepots
+CoutUsine=[[4,6,6],[4,6,6]];//Cout production par usine
+     
